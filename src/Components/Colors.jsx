@@ -26,7 +26,7 @@ function Colors() {
           </thead>
           <tbody>
             {colors.map((color, index) => {
-              return <Color key={index} color={color} index={index} />;
+              return <Color key={index} color={color} id={color.id} />;
             })}
           </tbody>
         </table>
