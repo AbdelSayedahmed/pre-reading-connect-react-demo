@@ -6,6 +6,13 @@ const API = import.meta.env.VITE_API_URL;
 function Colors() {
   const [colors, setColors] = useState([]);
 
+  useEffect(() => {
+    fetch(`${API}/colors`)
+      .then((res) => res.json())
+      .then((resJSON) => setColors(resJSON))
+      .catch((error) => console.log(error));
+  }, []);
+
   return (
     <div className="Colors">
       <section>
