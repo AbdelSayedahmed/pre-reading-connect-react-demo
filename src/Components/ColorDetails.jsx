@@ -7,15 +7,15 @@ function ColorDetails() {
   const [color, setColor] = useState({ name: "" });
   const [background, setBackground] = useState("");
   let navigate = useNavigate();
-  let { index } = useParams();
+  let { id } = useParams();
 
   // On page load, load color details
   useEffect(() => {
-    fetch(`${API}/colors/${index}`)
+    fetch(`${API}/colors/${id}`)
       .then((response) => response.json())
       .then((responseJSON) => setColor(responseJSON))
       .catch(() => navigate("/not-found"));
-  }, [index, navigate]);
+  }, [id, navigate]);
 
   // Be able to delete a color. Return to index view.
   const handleDelete = () => {};
@@ -44,7 +44,7 @@ function ColorDetails() {
         </div>
         <div>
           {" "}
-          <Link to={`/colors/${index}/edit`}>
+          <Link to={`/colors/${id}/edit`}>
             <button>Edit</button>
           </Link>
         </div>
