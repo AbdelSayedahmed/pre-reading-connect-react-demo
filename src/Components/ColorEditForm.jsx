@@ -4,7 +4,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 const API = import.meta.env.VITE_API_URL;
 
 function ColorEditForm() {
-  let { index } = useParams();
+  let { id } = useParams();
   const navigate = useNavigate();
 
   const [color, setColor] = useState({
@@ -55,7 +55,7 @@ function ColorEditForm() {
         <button type="submit">Submit</button>
       </form>
       <br />
-      <Link to={`/colors/${index}`}>
+      <Link to={`/colors/${id}`}>
         <button>Nevermind!</button>
       </Link>
     </div>
