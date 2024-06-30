@@ -19,7 +19,7 @@ function ColorDetails() {
 
   // Be able to delete a color. Return to index view.
   const handleDelete = () => {
-    fetch(`${API}/colors/${index}`, { method: "DELETE" })
+    fetch(`${API}/colors/${id}`, { method: "DELETE" })
       .then(() => navigate(`/colors`))
       .catch((error) => console.error(error));
   };
