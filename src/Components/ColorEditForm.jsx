@@ -6,11 +6,8 @@ const API = import.meta.env.VITE_API_URL;
 function ColorEditForm() {
   let { id } = useParams();
   const navigate = useNavigate();
-
-  const [color, setColor] = useState({
-    name: "",
-    isFavorite: false,
-  });
+  
+  const [color, setColor] = useState({ name: "", isFavorite: false });
 
   const handleTextChange = (event) => {
     setColor({ ...color, [event.target.id]: event.target.value });
@@ -48,7 +45,6 @@ function ColorEditForm() {
           placeholder="Name of Color"
           required
         />
-
         <label htmlFor="isFavorite">Favorite:</label>
         <input
           id="isFavorite"

@@ -12,9 +12,7 @@ function ColorNewForm() {
     fetch(`${API}/colors`, {
       method: "POST",
       body: JSON.stringify(color),
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
     })
       .then(() => navigate(`/colors`))
       .catch((error) => console.error("catch", error));
