@@ -5,10 +5,7 @@ const API = import.meta.env.VITE_API_URL;
 
 function ColorNewForm() {
   const navigate = useNavigate();
-  const [color, setColor] = useState({
-    name: "",
-    isFavorite: false,
-  });
+  const [color, setColor] = useState({ name: "", isFavorite: false });
 
   // Add a color. Redirect to the index view.
   const addColor = () => {
@@ -19,9 +16,7 @@ function ColorNewForm() {
         "Content-Type": "application/json",
       },
     })
-      .then(() => {
-        navigate(`/colors`);
-      })
+      .then(() => navigate(`/colors`))
       .catch((error) => console.error("catch", error));
   };
 
@@ -50,7 +45,6 @@ function ColorNewForm() {
           placeholder="Name of Color"
           required
         />
-
         <label htmlFor="isFavorite">Favorite:</label>
         <input
           id="isFavorite"
