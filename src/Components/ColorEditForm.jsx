@@ -21,9 +21,15 @@ function ColorEditForm() {
   };
 
   // Update a color. Redirect to show view
-  const updateColor = () => {};
-
-  // On page load, fill in the form with the color data.
+  const updateColor = () => {
+    fetch(`${API}/colors/${id}`, {
+      method: "PUT",
+      body: JSON.stringify(color),
+      headers: { "Content-Type": "application/json" },
+    })
+      .then(() => navigate(`/colors/${id}`))
+      .catch((error) => console.error("catch", error));
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
