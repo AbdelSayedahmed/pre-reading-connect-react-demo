@@ -18,7 +18,12 @@ function ColorDetails() {
   }, [id, navigate]);
 
   // Be able to delete a color. Return to index view.
-  const handleDelete = () => {};
+  const handleDelete = () => {
+    fetch(`${API}/colors/${index}`, { method: "DELETE" })
+      .then(() => navigate(`/colors`))
+      .catch((error) => console.error(error));
+  };
+
   useEffect(() => {
     const { name } = color;
     setBackground(CSS.supports("color", name.toLowerCase()));
